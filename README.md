@@ -60,6 +60,12 @@ django-starter
 
     heroku config:add I_AM_HEROKU=1 DJANGO_SECRET_KEY=<some crazy string> AWS_ACCESS_KEY_ID=<aws key> AWS_SECRET_ACCESS_KEY=<aws secret>
 
-7.  Deploy Django app to Heroku
+7.  Update path to manage.py in Procfile (replace `starter/` with `project_name/manage.py`)
+
+8.  Deploy Django app to Heroku
 
     git push heroku master
+
+9.  Run syncdb on Heroku
+
+    heroku run python <project_name>/manage.py syncdb
