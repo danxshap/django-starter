@@ -44,7 +44,14 @@ django-starter
     python manage.py syncdb`
     ```
 
-8.  Open bash_profile and add AWS variables (for calling collectstatic and uploading to S3)
+## Setup Production Environment
+1.  Create S3 bucket on aws.amazon.com
+
+2.  In settings.py, update `STATIC_URL` and `AWS_STORAGE_BUCKET_NAME`
+
+3.  In collectstatic_settings.py, update `AWS_STORAGE_BUCKET_NAME`
+
+4.  Open bash_profile and add AWS variables (for calling collectstatic and uploading to S3)
     
     ```
     vim ~/.bash_profile
@@ -55,41 +62,33 @@ django-starter
     source ~/.bash_profile
     ```
 
-
-## Setup Production Environment
-1.  Create S3 bucket on aws.amazon.com
-
-2.  In settings.py, update `STATIC_URL` and `AWS_STORAGE_BUCKET_NAME`
-
-3.  In collectstatic_settings.py, update `AWS_STORAGE_BUCKET_NAME`
-
-4.  Deploy static files
+5.  Deploy static files
     
     ```
     fab collectstatic
     ```
 
-5.  Create Heroku app
+6.  Create Heroku app
 
     ```
     heroku create
     ```
 
-6.  Add Heroku configuration variables
+7.  Add Heroku configuration variables
 
     ```
     heroku config:add I_AM_HEROKU=1 DJANGO_SECRET_KEY=<some crazy string> AWS_ACCESS_KEY_ID=<aws key> AWS_SECRET_ACCESS_KEY=<aws secret>
     ```
 
-7.  Update path to manage.py in Procfile (replace `starter/` with `project_name/manage.py`)
+8.  Update path to manage.py in Procfile (replace `starter/` with `project_name/manage.py`)
 
-8.  Deploy Django app to Heroku
+9.  Deploy Django app to Heroku
 
     ```
     git push heroku master
     ```
 
-9.  Run syncdb on Heroku
+10.  Run syncdb on Heroku
 
     ```
     heroku run python <project_name>/manage.py syncdb
