@@ -31,7 +31,9 @@ if env('I_AM_HEROKU', '') == '1':
     AWS_QUERYSTRING_AUTH = False
 
     # Heroku database config
-    DATABASES['default'] =  dj_database_url.config()
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
 
 # Development
 else:
