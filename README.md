@@ -3,10 +3,12 @@ django-starter
 
 ## Setup Local Environment
 1.  Make new project directory, copy files, go there, and rename django project subdirectory
+    ```
     mkdir /sites/<PROJECT_NAME>
     cp -r /sites/django-starter/ /sites/<PROJECT_NAME>
     cd /sites/<PROJECT_NAME>
     mv starter <PROJECT_NAME>
+    ```
 
 2.  Delete django-starter git repo
 
