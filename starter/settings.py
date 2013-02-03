@@ -70,9 +70,9 @@ LOGIN_REDIRECT_URL = '/'
 # EMAIL_HOST_PASSWORD = env('SITE_EMAIL_HOST_PASSWORD', '')
 
 # Pipeline
-BASE_CSS = ('main/css/bootstrap.css',
-    'main/css/bootstrap-responsive.css','main/css/core.css',)
-BASE_JS = ('main/js/csrf_setup.js', 'main/js/bootstrap.js',)
+BASE_CSS = ('main/bootstrap/css/bootstrap.css',
+    'main/bootstrap/css/bootstrap-responsive.css','main/css/core.css',)
+BASE_JS = ('main/js/csrf_setup.js', 'main/bootstrap/js/bootstrap.js',)
 
 PIPELINE_CSS = {
     'standard': {
