@@ -12,7 +12,9 @@ django-starter
 
 2.  Delete django-starter git repo
 
-    `rm -rf .git`
+    ```
+    rm -rf .git
+    ```
 
 3.  Create and activate a new virtualenv (requires virtualenv-wrapper)
 
@@ -23,7 +25,9 @@ django-starter
 
 4.  Install requirements
 
-    `pip install -r requirements.txt`
+    ```
+    pip install -r requirements.txt
+    ```
 
 5.  Create a database
 
@@ -36,7 +40,9 @@ django-starter
 
 7.  Initially sync database (creates user/session tables, etc...)
 
-    `python manage.py syncdb`
+    ```
+    python manage.py syncdb`
+    ```
 
 8.  Open bash_profile and add AWS variables (for calling collectstatic and uploading to S3)
     
@@ -59,20 +65,28 @@ django-starter
 
 4.  Deploy static files
     
-    `fab collectstatic`
+    ```
+    fab collectstatic
+    ```
 
 5.  Create Heroku app
 
 6.  Add Heroku configuration variables
 
-    `heroku config:add I_AM_HEROKU=1 DJANGO_SECRET_KEY=<some crazy string> AWS_ACCESS_KEY_ID=<aws key> AWS_SECRET_ACCESS_KEY=<aws secret>`
+    ```
+    heroku config:add I_AM_HEROKU=1 DJANGO_SECRET_KEY=<some crazy string> AWS_ACCESS_KEY_ID=<aws key> AWS_SECRET_ACCESS_KEY=<aws secret>
+    ```
 
 7.  Update path to manage.py in Procfile (replace `starter/` with `project_name/manage.py`)
 
 8.  Deploy Django app to Heroku
 
-    `git push heroku master`
+    ```
+    git push heroku master
+    ```
 
 9.  Run syncdb on Heroku
 
-    `heroku run python <project_name>/manage.py syncdb`
+    ```
+    heroku run python <project_name>/manage.py syncdb
+    ```
