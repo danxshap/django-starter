@@ -77,7 +77,8 @@ BASE_JS = ('main/js/csrf_setup.js', 'main/bootstrap/js/bootstrap.js',)
 PIPELINE_CSS = {
     'standard': {
         'source_filenames': BASE_CSS,
-        'output_filename': 'compressed_css/standard.min.css'
+        'output_filename': 'compressed_css/standard.min.css',
+        'variant': 'datauri'
     }
 }
 PIPELINE_JS = {

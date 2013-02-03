@@ -36,7 +36,7 @@ django-starter
     postgres=# CREATE DATABASE <PROJECT_DB_NAME>;
     ```
 
-6.  In settings.py, change name in `DATABASES` under dev section and update `TEMPLATE_DIRS` to be `/sites/<project_name>/<project_name>/templates`
+6.  In settings.py, change name in `DATABASES` under dev section and update `TEMPLATE_DIRS` to be `/sites/<PROJECT_NAME>/<PROJECT_NAME>/templates`
 
 7.  Initially sync database (creates user/session tables, etc...)
 
@@ -65,22 +65,26 @@ django-starter
 5.  Deploy static files
     
     ```
-    fab collectstatic
+    fab collectstatic:ignore_admin=False
     ```
 
-6.  Create Heroku app
+6.  Update path to manage.py in Procfile (replace `starter/` with `<PROJECT_NAME>/manage.py`)
+
+7.  Create Heroku app
 
     ```
-    heroku create
+    cd /sites/<PROJECT_NAME>
+    git init
+    git add .
+    git commit -m "first commit"
+    heroku apps:create <PROJECT_NAME>
     ```
 
-7.  Add Heroku configuration variables
+8.  Add Heroku configuration variables
 
     ```
     heroku config:add I_AM_HEROKU=1 DJANGO_SECRET_KEY=<some crazy string> AWS_ACCESS_KEY_ID=<aws key> AWS_SECRET_ACCESS_KEY=<aws secret>
     ```
-
-8.  Update path to manage.py in Procfile (replace `starter/` with `project_name/manage.py`)
 
 9.  Deploy Django app to Heroku
 
@@ -91,5 +95,5 @@ django-starter
 10.  Run syncdb on Heroku
 
     ```
-    heroku run python <project_name>/manage.py syncdb
+    heroku run python <PROJECT_NAME>/manage.py syncdb
     ```
