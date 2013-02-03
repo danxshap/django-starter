@@ -71,6 +71,10 @@ django-starter
 
 5.  Create Heroku app
 
+    ```
+    heroku create
+    ```
+
 6.  Add Heroku configuration variables
 
     ```
