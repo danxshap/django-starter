@@ -24,7 +24,7 @@ if env('I_AM_HEROKU', '') == '1':
     TEMPLATE_DEBUG = DEBUG
     STATIC_URL = 'http://s3.amazonaws.com/django_starter_static/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-    TEMPLATE_DIRS = ('/app/django_starter/templates') 
+    TEMPLATE_DIRS = ('/app/starter/templates') 
     STATICFILES_STORAGE = 'custom_storages.S3PipelineStorage'
     AWS_STORAGE_BUCKET_NAME = 'django_starter'
     AWS_S3_SECURE_URLS = False
