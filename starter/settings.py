@@ -22,7 +22,7 @@ MANAGERS = ADMINS
 if env('I_AM_HEROKU', '') == '1':
     DEBUG = False
     TEMPLATE_DEBUG = DEBUG
-    STATIC_URL = 'http://s3.amazonaws.com/django_starter_static/'
+    STATIC_URL = 'http://s3.amazonaws.com/django_starter/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
     TEMPLATE_DIRS = ('/app/starter/templates') 
     STATICFILES_STORAGE = 'custom_storages.S3PipelineStorage'
